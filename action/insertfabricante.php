@@ -13,5 +13,5 @@ if(isset($_POST['enviar'])){
     $resultado = mysqli_query($connection, $insertFabricante);
 
 }
-
+header('Location: ../fabricantes.php');
 ?>
