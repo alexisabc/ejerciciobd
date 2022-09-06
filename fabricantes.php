@@ -11,7 +11,7 @@
     <div class="container">
 
         <br>
-
+        <!--inicio de formulario-->
         <form action="action/insertfabricante.php" method="POST" >
             <div class="mb-3">
                 <label class="form-label">Nombre Fabricante</label>
@@ -21,30 +21,41 @@
             <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
             </div>
         </form>
+        <!--fin de formularios-->
 
         <br>
-
+            <!--inicio de la tabla de fabricantes-->
             <table class="table table-dark table-striped text-center">
                 <thead>
                     <tr>
                         <th scope="col">Codigo</th>
                         <th scope="col">Nombre Fabricante</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    include('connection/connection.php');
-                    $consulta = "SELECT * FROM fabricante";
-                    $resultado = mysqli_query($connection, $consulta);
-                    while ($fila = mysqli_fetch_array($resultado)) {
-                    ?>
+                <?php
+                // importar el archivo de conexion
+                include('connection/connection.php');
+                // variable para listar toda la tabla
+                $consulta = "SELECT * FROM fabricante";
+                // query de conexion  y query de listado
+                $resultado = mysqli_query($connection,$consulta);
+                // mientras haya algo dentro de table, seguira listado
+                while ($fila= mysqli_fetch_array($resultado)){
+                ?>
+
                         <tr>
                             <th scope="row"><?php echo $fila["codigo"] ?></th>
                             <td><?php echo $fila["nombre"] ?></td>
+                            <td><a href="action/deletefabricante.php?id=<?php echo $fila["codigo"] ?>"class="btn btn-danger">Eliminar</a></td>
+                            <td><a class="btn btn-warning">Editar</a></td>
                         </tr>
-                    <?php } ?>
+                    <?php }//cierre del while?>
                 </tbody>
             </table>
+            <!--final de la tabla de fabricantes-->
     </div>
 
 
