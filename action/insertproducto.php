@@ -8,7 +8,7 @@ if(isset($_POST["enviar"])){
 
     $phpNombre = $_POST['inputNombre'];
     $phpPrecio = $_POST['inputPrecio'];
-    $phpCodigoFabricante = $_POST['inputCodigoFabricante'];
+    $phpCodigoFabricante = $_POST['inputcodigo_fabricante'];
 
     $insertProducto = "INSERT INTO producto (nombre,precio,codigo_fabricante) VALUE ('$phpNombre','$phpPrecio','$phpCodigoFabricante')";
 
