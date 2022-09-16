@@ -50,7 +50,7 @@
                             <th scope="row"><?php echo $fila["codigo"] ?></th>
                             <td><?php echo $fila["nombre"] ?></td>
                             <td><a href="action/deletefabricante.php?id=<?php echo $fila["codigo"] ?>"class="btn btn-danger">Eliminar</a></td>
-                            <td><a class="btn btn-warning">Editar</a></td>
+                            <td><a href="action/editarfabricante.php?id=<?php echo $fila["codigo"] ?>"class="btn btn-warning">Editar</a></td>
                         </tr>
                     <?php }//cierre del while?>
                 </tbody>

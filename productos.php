@@ -67,7 +67,7 @@
                             <td><?php echo $fila["precio"] ?></td>
                             <td><?php echo $fila["codigo_fabricante"] ?></td>
                             <td><a href="action/deleteproducto.php?id=<?php echo $fila["codigo"] ?>"class="btn btn-danger">Eliminar</a></td>
-                            <td><a class="btn btn-warning">Editar</a></td>  
+                            <td><a href="action/editarproducto.php?id=<?php echo $fila["codigo"] ?>" class="btn btn-warning">Editar</a></td>  
                         </tr>
                     <?php } //cierre del while?>
                 </tbody>
